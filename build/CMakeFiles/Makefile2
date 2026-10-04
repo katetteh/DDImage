@@ -54,10 +54,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Downloads/Image_processing
+CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Downloads/Image_processing/build
+CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -88,14 +88,14 @@ CMakeFiles/ImageProcessorApp.dir/all: CMakeFiles/ImageProcessorApp_autogen.dir/a
 CMakeFiles/ImageProcessorApp.dir/all: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target ImageProcessorApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target ImageProcessorApp"
 .PHONY : CMakeFiles/ImageProcessorApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ImageProcessorApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
 .PHONY : CMakeFiles/ImageProcessorApp.dir/rule
 
 # Convenience name for target.
@@ -105,7 +105,7 @@ ImageProcessorApp: CMakeFiles/ImageProcessorApp.dir/rule
 # codegen rule for target.
 CMakeFiles/ImageProcessorApp.dir/codegen: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target ImageProcessorApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target ImageProcessorApp"
 .PHONY : CMakeFiles/ImageProcessorApp.dir/codegen
 
 # clean rule for target.
@@ -120,14 +120,14 @@ CMakeFiles/ImageProcessorApp.dir/clean:
 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num= "Built target ImageProcessorApp_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num= "Built target ImageProcessorApp_autogen_timestamp_deps"
 .PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
 .PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ ImageProcessorApp_autogen_timestamp_deps: CMakeFiles/ImageProcessorApp_autogen_t
 # codegen rule for target.
 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num= "Finished codegen for target ImageProcessorApp_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num= "Finished codegen for target ImageProcessorApp_autogen_timestamp_deps"
 .PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
@@ -152,14 +152,14 @@ CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean:
 CMakeFiles/ImageProcessorApp_autogen.dir/all: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num=7 "Built target ImageProcessorApp_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=7 "Built target ImageProcessorApp_autogen"
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ImageProcessorApp_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/rule
 
 # Convenience name for target.
@@ -169,7 +169,7 @@ ImageProcessorApp_autogen: CMakeFiles/ImageProcessorApp_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/ImageProcessorApp_autogen.dir/codegen: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num=7 "Finished codegen for target ImageProcessorApp_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=7 "Finished codegen for target ImageProcessorApp_autogen"
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/codegen
 
 # clean rule for target.

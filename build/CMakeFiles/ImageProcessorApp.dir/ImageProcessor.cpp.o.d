@@ -1,7 +1,7 @@
 CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json \
-  /Users/kelvintettehaddo/Downloads/Image_processing/ImageProcessor.cpp \
-  /Users/kelvintettehaddo/Downloads/Image_processing/stb_image.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/ImageProcessor.cpp \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/stb_image.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -248,8 +248,8 @@ CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/stb_image_write.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/matrix.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/stb_image_write.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
@@ -832,4 +832,4 @@ CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/ImageProcessor.h
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/ImageProcessor.h

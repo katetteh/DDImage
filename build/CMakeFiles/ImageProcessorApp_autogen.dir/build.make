@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Downloads/Image_processing
+CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Downloads/Image_processing/build
+CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage/build
 
 # Utility rule file for ImageProcessorApp_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/ImageProcessorApp_autogen: ImageProcessorApp_autogen/timestamp
 ImageProcessorApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
 ImageProcessorApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
 ImageProcessorApp_autogen/timestamp: CMakeFiles/ImageProcessorApp_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target ImageProcessorApp"
-	/opt/homebrew/bin/cmake -E cmake_autogen /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles/ImageProcessorApp_autogen.dir/AutogenInfo.json ""
-	/opt/homebrew/bin/cmake -E touch /Users/kelvintettehaddo/Downloads/Image_processing/build/ImageProcessorApp_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target ImageProcessorApp"
+	/opt/homebrew/bin/cmake -E cmake_autogen /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp_autogen.dir/AutogenInfo.json ""
+	/opt/homebrew/bin/cmake -E touch /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp_autogen/timestamp
 
 CMakeFiles/ImageProcessorApp_autogen.dir/codegen:
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/ImageProcessorApp_autogen.dir/clean:
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/clean
 
 CMakeFiles/ImageProcessorApp_autogen.dir/depend:
-	cd /Users/kelvintettehaddo/Downloads/Image_processing/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kelvintettehaddo/Downloads/Image_processing /Users/kelvintettehaddo/Downloads/Image_processing /Users/kelvintettehaddo/Downloads/Image_processing/build /Users/kelvintettehaddo/Downloads/Image_processing/build /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles/ImageProcessorApp_autogen.dir/DependInfo.cmake "--color=$(COLOR)" ImageProcessorApp_autogen
+	cd /Users/kelvintettehaddo/Documents/GitHub/DDImage/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kelvintettehaddo/Documents/GitHub/DDImage /Users/kelvintettehaddo/Documents/GitHub/DDImage /Users/kelvintettehaddo/Documents/GitHub/DDImage/build /Users/kelvintettehaddo/Documents/GitHub/DDImage/build /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp_autogen.dir/DependInfo.cmake "--color=$(COLOR)" ImageProcessorApp_autogen
 .PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/depend
 

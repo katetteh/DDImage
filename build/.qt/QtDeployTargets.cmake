@@ -1,2 +1,2 @@
-set(__QT_DEPLOY_TARGET_ImageProcessorApp_FILE /Users/kelvintettehaddo/Downloads/Image_processing/build/ImageProcessorApp)
+set(__QT_DEPLOY_TARGET_ImageProcessorApp_FILE /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp)
 set(__QT_DEPLOY_TARGET_ImageProcessorApp_TYPE EXECUTABLE)

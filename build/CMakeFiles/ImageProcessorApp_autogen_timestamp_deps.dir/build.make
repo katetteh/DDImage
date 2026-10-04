@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Downloads/Image_processing
+CMAKE_SOURCE_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Downloads/Image_processing/build
+CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage/build
 
 # Utility rule file for ImageProcessorApp_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/depend:
-	cd /Users/kelvintettehaddo/Downloads/Image_processing/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kelvintettehaddo/Downloads/Image_processing /Users/kelvintettehaddo/Downloads/Image_processing /Users/kelvintettehaddo/Downloads/Image_processing/build /Users/kelvintettehaddo/Downloads/Image_processing/build /Users/kelvintettehaddo/Downloads/Image_processing/build/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" ImageProcessorApp_autogen_timestamp_deps
+	cd /Users/kelvintettehaddo/Documents/GitHub/DDImage/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kelvintettehaddo/Documents/GitHub/DDImage /Users/kelvintettehaddo/Documents/GitHub/DDImage /Users/kelvintettehaddo/Documents/GitHub/DDImage/build /Users/kelvintettehaddo/Documents/GitHub/DDImage/build /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" ImageProcessorApp_autogen_timestamp_deps
 .PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/depend
 

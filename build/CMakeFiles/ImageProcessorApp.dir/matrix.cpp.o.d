@@ -1,7 +1,7 @@
 CMakeFiles/ImageProcessorApp.dir/matrix.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json \
-  /Users/kelvintettehaddo/Downloads/Image_processing/matrix.cpp \
-  /Users/kelvintettehaddo/Downloads/Image_processing/matrix.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/matrix.cpp \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

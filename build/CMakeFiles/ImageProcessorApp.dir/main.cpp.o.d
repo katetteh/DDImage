@@ -1,6 +1,6 @@
 CMakeFiles/ImageProcessorApp.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json \
-  /Users/kelvintettehaddo/Downloads/Image_processing/main.cpp \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/main.cpp \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qapplication.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -1126,13 +1126,39 @@ CMakeFiles/ImageProcessorApp.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QSizeF \
   /opt/homebrew/lib/QtGui.framework/Headers/QTransform \
   /opt/homebrew/lib/QtGui.framework/Headers/qscreen_platform.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/QCloseEvent \
   /opt/homebrew/lib/QtCore.framework/Headers/QString \
+  /opt/homebrew/lib/QtCore.framework/Headers/QDir \
+  /opt/homebrew/lib/QtCore.framework/Headers/QFileInfo \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QCheckBox \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qcheckbox.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QStackedWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/QCamera \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qcamera.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qcameradevice.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qtvideo.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qtmultimediaexports.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qvideoframe.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qtmultimediaglobal.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qtmultimedia-config.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qvideoframeformat.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/QCameraDevice \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/QMediaCaptureSession \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qmediacapturesession.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/QImageCapture \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qimagecapture.h \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/QMediaDevices \
+  /opt/homebrew/lib/QtMultimedia.framework/Headers/qmediadevices.h \
+  /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers/QVideoWidget \
+  /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers/qvideowidget.h \
+  /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers/qtmultimediawidgetsglobal.h \
+  /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers/qtmultimediawidgetsexports.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /Users/kelvintettehaddo/Downloads/Image_processing/matrix.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/ImageProcessor.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/build/ImageProcessorApp_autogen/include/main.moc \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/matrix.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/ImageProcessor.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp_autogen/include/main.moc \
   /opt/homebrew/lib/QtCore.framework/Headers/qtmochelpers.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qtmocconstants.h \
   /opt/homebrew/lib/QtCore.framework/Headers/q20algorithm.h

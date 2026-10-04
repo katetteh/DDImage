@@ -10,8 +10,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# Find the Qt Widgets library (change Qt6 to Qt5 if you are on an older version)
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
+# Find the Qt libraries (Multimedia + MultimediaWidgets are needed for the camera)
+find_package(Qt6 COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED)
 
 # Define your source files
 set(SOURCES
@@ -20,8 +20,18 @@ set(SOURCES
     matrix.cpp
 )
 
-# Create the executable
+# Plain executable on every OS (no MACOSX_BUNDLE)
 add_executable(ImageProcessorApp ${SOURCES})
 
-# Link the Qt Widgets module to your application
-target_link_libraries(ImageProcessorApp PRIVATE Qt6::Widgets)
+# macOS only: embed Info.plist into the binary so Qt can find the camera
+# usage description. Windows and Linux ignore this block.
+if(APPLE)
+    target_link_options(ImageProcessorApp PRIVATE
+        "LINKER:-sectcreate,__TEXT,__info_plist,${CMAKE_CURRENT_SOURCE_DIR}/Info.plist")
+endif()
+
+target_link_libraries(ImageProcessorApp PRIVATE
+    Qt6::Widgets
+    Qt6::Multimedia
+    Qt6::MultimediaWidgets
+)

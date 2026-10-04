@@ -15,8 +15,23 @@
 #include <QMessageBox>
 #include <QShortcut>
 #include <QWheelEvent>
+#include <QCloseEvent>
 #include <QString>
+#include <QDir>
+#include <QFileInfo>
 #include <QCheckBox>
+#include <QDialog>
+#include <QStackedWidget>
+
+// ── Camera support (needs Qt6 Multimedia + MultimediaWidgets) ──
+#include <QCamera>
+#include <QCameraDevice>
+#include <QMediaCaptureSession>
+#include <QImageCapture>
+#include <QMediaDevices>
+#include <QVideoWidget>
+
+#include <algorithm>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -70,6 +85,187 @@ struct ViewEntry {
     }
 };
 
+// ─── Run every image processing function on one image file ────────────────
+// This is the old body of main(), moved here so it can be called again
+// whenever a new image is chosen (the startup file OR a camera photo).
+// Returns an empty vector if the file could not be decoded.
+std::vector<ViewEntry> buildEntries(const QString& imagePath) {
+    std::vector<ViewEntry> entries;
+
+    ImageProcessor processor;
+    int width = 0, height = 0;
+    const QByteArray imageFilename = imagePath.toLocal8Bit();
+
+    // Load greyscale for resize tests, RGB for filter tests
+    Matrix   grey = processor.load(imageFilename.constData(), width, height);
+    RGBImage rgb  = processor.load_rgb(imageFilename.constData(), width, height);
+
+    if (width <= 1 || height <= 1) {
+        QMessageBox::critical(nullptr, "Unable to open image",
+            "The selected file could not be decoded as an image.");
+        return entries;
+    }
+
+    // Keep expensive comparisons small enough that the UI can start promptly.
+    const int maxPreviewDimension = 600;
+    const double previewScale = std::min(
+        1.0, static_cast<double>(maxPreviewDimension) /
+                 std::max(width, height));
+    const int previewWidth  = std::max(2, static_cast<int>(width  * previewScale));
+    const int previewHeight = std::max(2, static_cast<int>(height * previewScale));
+    Matrix previewGrey = processor.resize(
+        grey, previewWidth, previewHeight, INTER_AREA);
+    RGBImage previewRgb = processor.resize(
+        rgb, previewWidth, previewHeight, INTER_AREA);
+
+    int sw = previewWidth / 2,  sh = previewHeight / 2;
+    int lw = previewWidth * 2,  lh = previewHeight * 2;
+
+    // ── Resize comparisons — enable Pixel-perfect mode (press P) ──
+    entries.push_back(ViewEntry::fromMatrix("Original greyscale",       grey));
+    entries.push_back(ViewEntry::fromMatrix("Nearest ↓ half",           processor.resize(previewGrey, sw, sh, INTER_NEAREST)));
+    entries.push_back(ViewEntry::fromMatrix("Bilinear ↓ half",          processor.resize(previewGrey, sw, sh, INTER_LINEAR)));
+    entries.push_back(ViewEntry::fromMatrix("Bicubic ↓ half",           processor.resize(previewGrey, sw, sh, INTER_CUBIC)));
+    entries.push_back(ViewEntry::fromMatrix("Nearest ↑ double",         processor.resize(previewGrey, lw, lh, INTER_NEAREST)));
+    entries.push_back(ViewEntry::fromMatrix("Bilinear ↑ double",        processor.resize(previewGrey, lw, lh, INTER_LINEAR)));
+    entries.push_back(ViewEntry::fromMatrix("Bicubic ↑ double",         processor.resize(previewGrey, lw, lh, INTER_CUBIC)));
+
+    // ── Filter comparisons (RGB, fit-to-window is fine here) ──
+    entries.push_back(ViewEntry::fromRGB("Original RGB",                rgb));
+    entries.push_back(ViewEntry::fromRGB("Gaussian blur",               processor.Gaussian_blur(previewRgb)));
+    entries.push_back(ViewEntry::fromRGB("Bilateral s=5 c=40",          processor.bilateralFilter(previewRgb, 5.0f, 40.0f)));
+    entries.push_back(ViewEntry::fromRGB("Negative",                    processor.negative(previewRgb)));
+    entries.push_back(ViewEntry::fromRGB("Box blur",                    processor.box_blur(previewRgb)));
+    entries.push_back(ViewEntry::fromRGB("ROI square",                  processor.ROI(previewRgb, 200, 200, 300, 300)));
+
+    return entries;
+}
+
+// ─── Camera dialog ─────────────────────────────────────────────────────────
+// Flow:  live preview → [Capture] → still shown with the question
+//        "Use this photo for the image processing functions?"
+//        → [Yes, use this photo]  (dialog accepted, photo() holds the image)
+//        → [Retake]               (back to live preview)
+//        → [Cancel]               (dialog rejected)
+class CameraDialog : public QDialog {
+public:
+    explicit CameraDialog(QWidget* parent = nullptr) : QDialog(parent) {
+        setWindowTitle("Take a photo");
+        resize(780, 660);
+        setStyleSheet("background:#1e1e1e; color:#ddd;");
+
+        QVBoxLayout* root = new QVBoxLayout(this);
+
+        // Page 0 = live camera, page 1 = captured still
+        stack     = new QStackedWidget;
+        videoView = new QVideoWidget;
+        stillView = new QLabel;
+        stillView->setAlignment(Qt::AlignCenter);
+        stillView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        stack->addWidget(videoView);
+        stack->addWidget(stillView);
+        root->addWidget(stack, 1);
+
+        promptLabel = new QLabel("Use this photo for the image processing functions?");
+        promptLabel->setAlignment(Qt::AlignCenter);
+        promptLabel->setStyleSheet("font-size:14px; padding:6px;");
+        root->addWidget(promptLabel);
+
+        QHBoxLayout* row = new QHBoxLayout;
+        captureBtn = makeButton("Capture",             "#2a6496", "#3a7bc8");
+        useBtn     = makeButton("Yes, use this photo", "#2a7a46", "#3a9b58");
+        retakeBtn  = makeButton("Retake",              "#8a5a1a", "#aa7122");
+        cancelBtn  = makeButton("Cancel",              "#555555", "#6a6a6a");
+        row->addWidget(captureBtn);
+        row->addWidget(useBtn);
+        row->addWidget(retakeBtn);
+        row->addWidget(cancelBtn);
+        root->addLayout(row);
+
+        // ── Camera plumbing ──
+        const QCameraDevice device = QMediaDevices::defaultVideoInput();
+        camera  = new QCamera(device, this);
+        session = new QMediaCaptureSession(this);
+        capture = new QImageCapture(this);
+        session->setCamera(camera);
+        session->setImageCapture(capture);
+        session->setVideoOutput(videoView);
+
+        // imageCaptured hands us the frame in memory (no file needed yet)
+        connect(capture, &QImageCapture::imageCaptured, this,
+                [this](int, const QImage& img) {
+                    photoImage = img;
+                    showStill();
+                });
+        connect(capture, &QImageCapture::errorOccurred, this,
+                [this](int, QImageCapture::Error, const QString& msg) {
+                    QMessageBox::warning(this, "Capture failed", msg);
+                });
+        connect(camera, &QCamera::errorOccurred, this,
+                [this](QCamera::Error, const QString& msg) {
+                    QMessageBox::warning(this, "Camera error", msg);
+                });
+
+        connect(captureBtn, &QPushButton::clicked, this, [this]{ capture->capture(); });
+        connect(retakeBtn,  &QPushButton::clicked, this, [this]{
+            photoImage = QImage();
+            setLiveMode(true);
+        });
+        connect(useBtn,     &QPushButton::clicked, this, &QDialog::accept);
+        connect(cancelBtn,  &QPushButton::clicked, this, &QDialog::reject);
+
+        setLiveMode(true);
+        if (device.isNull())
+            captureBtn->setEnabled(false);
+        else
+            camera->start();
+    }
+
+    QImage photo() const { return photoImage; }
+
+protected:
+    // Always release the camera when the dialog goes away
+    void done(int result) override {
+        camera->stop();
+        QDialog::done(result);
+    }
+
+private:
+    QStackedWidget*        stack;
+    QVideoWidget*          videoView;
+    QLabel*                stillView;
+    QLabel*                promptLabel;
+    QPushButton *captureBtn, *useBtn, *retakeBtn, *cancelBtn;
+    QCamera*               camera;
+    QMediaCaptureSession*  session;
+    QImageCapture*         capture;
+    QImage                 photoImage;
+
+    static QPushButton* makeButton(const QString& text,
+                                   const QString& bg, const QString& hover) {
+        QPushButton* b = new QPushButton(text);
+        b->setStyleSheet(QString(
+            "QPushButton { background:%1; color:white; border:none;"
+            "              padding:10px; border-radius:6px; font-size:12px; }"
+            "QPushButton:hover { background:%2; }").arg(bg, hover));
+        return b;
+    }
+
+    void setLiveMode(bool live) {
+        stack->setCurrentIndex(live ? 0 : 1);
+        captureBtn->setVisible(live);
+        promptLabel->setVisible(!live);
+        useBtn->setVisible(!live);
+        retakeBtn->setVisible(!live);
+    }
+
+    void showStill() {
+        setLiveMode(false);
+        stillView->setPixmap(QPixmap::fromImage(photoImage).scaled(
+            stillView->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    }
+};
+
 // ─── Viewer ────────────────────────────────────────────────────────────────
 class ImageViewer : public QMainWindow {
     Q_OBJECT
@@ -112,15 +308,10 @@ public:
         sideLayout->addWidget(filterList);
 
         // ── Pixel-perfect toggle ──────────────────────────────────────────
-        // This is THE key control for testing your resize functions.
-        //
         // OFF (default): Qt scales your image to fit the window using its own
         //   interpolation. Good for general viewing but masks resize quality.
-        //
         // ON: Qt shows your image at EXACTLY 1 output pixel = 1 screen pixel.
-        //   Qt does zero resampling. You see ONLY what your resize code produced.
         //   Use this to compare Nearest vs Bilinear vs Bicubic honestly.
-        //   Scroll around with the scrollbars or arrow keys.
         // ─────────────────────────────────────────────────────────────────
         pixelPerfectBox = new QCheckBox("Pixel-perfect 1:1  [P]");
         pixelPerfectBox->setStyleSheet(
@@ -133,6 +324,14 @@ public:
         sizeLabel = new QLabel("");
         sizeLabel->setStyleSheet("color:#555; font-size:11px; padding:0 4px 8px;");
         sideLayout->addWidget(sizeLabel);
+
+        // ── NEW: camera button ──
+        cameraBtn = new QPushButton("Take photo with camera");
+        cameraBtn->setStyleSheet(R"(
+            QPushButton { background:#7a3a96; color:white; border:none;
+                          padding:10px; border-radius:6px; font-size:12px; }
+            QPushButton:hover { background:#964ab8; })");
+        sideLayout->addWidget(cameraBtn);
 
         saveBtn = new QPushButton("Save current");
         saveBtn->setStyleSheet(R"(
@@ -166,6 +365,7 @@ public:
         connect(filterList,      &QListWidget::currentRowChanged, this, &ImageViewer::showImage);
         connect(saveBtn,         &QPushButton::clicked,           this, &ImageViewer::saveCurrent);
         connect(saveAllBtn,      &QPushButton::clicked,           this, &ImageViewer::saveAll);
+        connect(cameraBtn,       &QPushButton::clicked,           this, &ImageViewer::openCamera);
         connect(pixelPerfectBox, &QCheckBox::toggled,             this, &ImageViewer::onTogglePixelPerfect);
 
         new QShortcut(QKeySequence(Qt::Key_Up),               this, [this]{ navigate(-1); });
@@ -177,9 +377,10 @@ public:
         new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_S),     this, this, &ImageViewer::saveCurrent);
         new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Equal), this, this, &ImageViewer::zoomIn);
         new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Minus), this, this, &ImageViewer::zoomOut);
+        new QShortcut(QKeySequence(Qt::Key_C),                this, this, &ImageViewer::openCamera);
 
         setupMenuBar();
-        statusBar()->showMessage("P = pixel-perfect  |  F = fit  |  ↑↓ = switch  |  Ctrl+S = save");
+        statusBar()->showMessage("P = pixel-perfect  |  F = fit  |  C = camera  |  ↑↓ = switch  |  Ctrl+S = save");
         showImage(0);
     }
 
@@ -218,13 +419,53 @@ private slots:
     }
 
     // Show at exactly 1:1 — Qt does NO resampling.
-    // FastTransformation at the image's own size = identity operation.
-    // Every pixel on screen corresponds to exactly one pixel your code wrote.
     void showAt1to1() {
         if (currentPixmap.isNull()) return;
         imageLabel->setPixmap(currentPixmap);   // no scaling at all
         imageLabel->resize(currentPixmap.size());
         updateStatus("1:1 — no Qt interpolation");
+    }
+
+    // ── NEW: open camera, capture, confirm, then rerun every function ──
+    void openCamera() {
+        if (QMediaDevices::videoInputs().isEmpty()) {
+            QMessageBox::warning(this, "No camera",
+                "No camera was found on this computer.");
+            return;
+        }
+
+        CameraDialog dlg(this);
+        if (dlg.exec() != QDialog::Accepted)
+            return;                       // cancelled, or user did not accept the photo
+
+        QImage photo = dlg.photo();
+        if (photo.isNull())
+            return;
+
+        // Your ImageProcessor loads from a file path, so write the captured
+        // frame to a temp file and feed it through the exact same pipeline
+        // that Image1.jpg goes through.
+        const QString tmpPath = QDir::temp().filePath("imgproc_camera_capture.jpg");
+        if (!photo.convertToFormat(QImage::Format_RGB888).save(tmpPath, "JPG", 95)) {
+            QMessageBox::critical(this, "Save failed",
+                "Could not write the captured photo to a temporary file.");
+            return;
+        }
+
+        QApplication::setOverrideCursor(Qt::WaitCursor);
+        statusBar()->showMessage("Running image processing functions on camera photo...");
+        QApplication::processEvents();
+        std::vector<ViewEntry> newEntries = buildEntries(tmpPath);
+        QApplication::restoreOverrideCursor();
+
+        if (newEntries.empty()) {
+            statusBar()->showMessage("Camera photo could not be processed", 4000);
+            return;
+        }
+
+        setEntries(std::move(newEntries));
+        setWindowTitle("Image Processing Viewer — camera photo");
+        statusBar()->showMessage("Processed camera photo", 4000);
     }
 
     void saveCurrent() {
@@ -266,8 +507,21 @@ private:
     QListWidget* filterList;
     QPushButton* saveBtn;
     QPushButton* saveAllBtn;
+    QPushButton* cameraBtn;
     QCheckBox*   pixelPerfectBox;
     QLabel*      sizeLabel;
+
+    // Replace everything shown in the viewer with a new set of results
+    void setEntries(std::vector<ViewEntry> newEntries) {
+        entries = std::move(newEntries);
+        filterList->blockSignals(true);       // avoid showImage() firing mid-rebuild
+        filterList->clear();
+        for (auto& e : entries)
+            filterList->addItem(QString::fromStdString(e.label));
+        filterList->setCurrentRow(0);
+        filterList->blockSignals(false);
+        showImage(0);
+    }
 
     void setupMenuBar() {
         QMenu* v = menuBar()->addMenu("&View");
@@ -278,6 +532,7 @@ private:
             pixelPerfectBox->setChecked(!pixelPerfectBox->isChecked());
         });
         QMenu* f = menuBar()->addMenu("&File");
+        f->addAction("Take photo with camera", this, &ImageViewer::openCamera);
         f->addAction("Save current",  this, &ImageViewer::saveCurrent);
         f->addAction("Save all",      this, &ImageViewer::saveAll);
     }
@@ -285,9 +540,8 @@ private:
     void applyZoom(double factor) {
         scaleFactor = std::max(0.05, std::min(factor, 20.0));
         QSize sz = currentPixmap.size() * scaleFactor;
-        // FastTransformation = nearest-neighbour zoom.
-        // This means when you zoom IN to inspect pixels, you see hard pixel
-        // boundaries — not Qt's smoothed version. Good for comparing methods.
+        // FastTransformation = nearest-neighbour zoom, so zooming in shows
+        // hard pixel boundaries instead of Qt's smoothed version.
         imageLabel->setPixmap(currentPixmap.scaled(sz,
             Qt::KeepAspectRatio, Qt::FastTransformation));
         imageLabel->resize(sz);
@@ -315,38 +569,32 @@ private:
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
-    ImageProcessor processor;
-    int width, height;
+    QString imagePath;
+    const QStringList candidates = {
+        QDir::current().filePath("Image1.jpg"),
+        QDir(QCoreApplication::applicationDirPath()).filePath("Image1.jpg"),
+        QDir(QCoreApplication::applicationDirPath()).filePath("../Image1.jpg")
+    };
 
-    // Load greyscale for resize tests, RGB for filter tests
-    Matrix   grey = processor.load("Image_1.jpg", width, height);
-    RGBImage rgb  = processor.load_rgb("Image_1.jpg", width, height);
+    for (const QString& candidate : candidates) {
+        if (QFileInfo(candidate).isFile()) {
+            imagePath = QFileInfo(candidate).absoluteFilePath();
+            break;
+        }
+    }
 
-    int sw = width  / 2,  sh = height / 2;   // downscale targets
-    int lw = width  * 2,  lh = height * 2;   // upscale targets (warning: large)
+    if (imagePath.isEmpty()) {
+        imagePath = QFileDialog::getOpenFileName(
+            nullptr, "Open image", QDir::homePath(),
+            "Images (*.jpg *.jpeg *.png *.bmp)");
+    }
 
-    std::vector<ViewEntry> entries;
+    if (imagePath.isEmpty())
+        return 0;
 
-    // ── Resize comparisons — enable Pixel-perfect mode (press P) ──
-    // Each result has a different pixel size, confirming your function ran.
-    // With pixel-perfect OFF, Qt rescales everything to the same window size
-    // and uses its own interpolation — you lose the ability to judge quality.
-    // With pixel-perfect ON, you see the raw output of each method directly.
-    entries.push_back(ViewEntry::fromMatrix("Original greyscale",       grey));
-    entries.push_back(ViewEntry::fromMatrix("Nearest ↓ half",           processor.resize(grey, sw, sh, INTER_NEAREST)));
-    entries.push_back(ViewEntry::fromMatrix("Bilinear ↓ half",          processor.resize(grey, sw, sh, INTER_LINEAR)));
-    entries.push_back(ViewEntry::fromMatrix("Bicubic ↓ half",           processor.resize(grey, sw, sh, INTER_CUBIC)));
-    entries.push_back(ViewEntry::fromMatrix("Nearest ↑ double",         processor.resize(grey, lw, lh, INTER_NEAREST)));
-    entries.push_back(ViewEntry::fromMatrix("Bilinear ↑ double",        processor.resize(grey, lw, lh, INTER_LINEAR)));
-    entries.push_back(ViewEntry::fromMatrix("Bicubic ↑ double",         processor.resize(grey, lw, lh, INTER_CUBIC)));
-
-    // ── Filter comparisons (RGB, fit-to-window is fine here) ──
-    entries.push_back(ViewEntry::fromRGB("Original RGB",                rgb));
-    entries.push_back(ViewEntry::fromRGB("Gaussian blur",               processor.Gaussian_blur(rgb)));
-    entries.push_back(ViewEntry::fromRGB("Bilateral s=5 c=40",          processor.bilateralFilter(rgb, 5.0f, 40.0f)));
-    entries.push_back(ViewEntry::fromRGB("Negative",                    processor.negative(rgb)));
-    entries.push_back(ViewEntry::fromRGB("Box blur",                    processor.box_blur(rgb)));
-    entries.push_back(ViewEntry::fromRGB("ROI square",                  processor.ROI(rgb, 200, 200, 300, 300)));
+    std::vector<ViewEntry> entries = buildEntries(imagePath);
+    if (entries.empty())
+        return 1;
 
     ImageViewer viewer(std::move(entries));
     viewer.show();

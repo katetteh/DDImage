@@ -1,5 +1,5 @@
-/Users/kelvintettehaddo/Downloads/Image_processing/build/ImageProcessorApp_autogen/include/main.moc: /Users/kelvintettehaddo/Downloads/Image_processing/main.cpp \
-  /Users/kelvintettehaddo/Downloads/Image_processing/build/ImageProcessorApp_autogen/moc_predefs.h \
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp_autogen/include/main.moc: /Users/kelvintettehaddo/Documents/GitHub/DDImage/main.cpp \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -794,8 +794,10 @@
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/ptrcheck.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/ImageProcessor.h \
-  /Users/kelvintettehaddo/Downloads/Image_processing/matrix.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/ImageProcessor.h \
+  /Users/kelvintettehaddo/Documents/GitHub/DDImage/matrix.h \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/QDir \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/QFileInfo \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/QList \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/QObject \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/QRect \
@@ -952,6 +954,7 @@
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtGui.framework/Versions/A/Headers/QCloseEvent \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtGui.framework/Versions/A/Headers/QImage \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtGui.framework/Versions/A/Headers/QPixmap \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtGui.framework/Versions/A/Headers/QShortcut \
@@ -999,6 +1002,7 @@
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QApplication \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QCheckBox \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QFileDialog \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QHBoxLayout \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
@@ -1008,6 +1012,7 @@
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QMessageBox \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QScrollArea \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QStackedWidget \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QStatusBar \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QVBoxLayout \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
@@ -1039,6 +1044,7 @@
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qscrollarea.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qslider.h \
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qstackedwidget.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qstatusbar.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qstyle.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qstyleoption.h \
@@ -1047,4 +1053,24 @@
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
   /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
-  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
+  /opt/homebrew/Cellar/qtbase/6.11.2/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/QCamera \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/QCameraDevice \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/QImageCapture \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/QMediaCaptureSession \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/QMediaDevices \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qcamera.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qcameradevice.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qimagecapture.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qmediacapturesession.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qmediadevices.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimedia-config.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaexports.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaglobal.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qtvideo.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qvideoframe.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimedia.framework/Versions/A/Headers/qvideoframeformat.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimediaWidgets.framework/Versions/A/Headers/QVideoWidget \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimediaWidgets.framework/Versions/A/Headers/qtmultimediawidgetsexports.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimediaWidgets.framework/Versions/A/Headers/qtmultimediawidgetsglobal.h \
+  /opt/homebrew/Cellar/qtmultimedia/6.11.2/lib/QtMultimediaWidgets.framework/Versions/A/Headers/qvideowidget.h
