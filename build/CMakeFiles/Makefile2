@@ -63,119 +63,174 @@ CMAKE_BINARY_DIR = /Users/kelvintettehaddo/Documents/GitHub/DDImage/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ImageProcessorApp.dir/all
+all: CMakeFiles/ddimage.dir/all
+all: examples/Image_processing_in_qt_window/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/ImageProcessorApp.dir/codegen
+codegen: CMakeFiles/ddimage.dir/codegen
+codegen: examples/Image_processing_in_qt_window/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: examples/Image_processing_in_qt_window/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ImageProcessorApp.dir/clean
-clean: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
-clean: CMakeFiles/ImageProcessorApp_autogen.dir/clean
+clean: CMakeFiles/ddimage.dir/clean
+clean: examples/Image_processing_in_qt_window/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ImageProcessorApp.dir
+# Directory level rules for directory examples/Image_processing_in_qt_window
+
+# Recursive "all" directory target.
+examples/Image_processing_in_qt_window/all: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all
+.PHONY : examples/Image_processing_in_qt_window/all
+
+# Recursive "codegen" directory target.
+examples/Image_processing_in_qt_window/codegen: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/codegen
+.PHONY : examples/Image_processing_in_qt_window/codegen
+
+# Recursive "preinstall" directory target.
+examples/Image_processing_in_qt_window/preinstall:
+.PHONY : examples/Image_processing_in_qt_window/preinstall
+
+# Recursive "clean" directory target.
+examples/Image_processing_in_qt_window/clean: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/clean
+examples/Image_processing_in_qt_window/clean: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
+examples/Image_processing_in_qt_window/clean: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/clean
+.PHONY : examples/Image_processing_in_qt_window/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ddimage.dir
 
 # All Build rule for target.
-CMakeFiles/ImageProcessorApp.dir/all: CMakeFiles/ImageProcessorApp_autogen.dir/all
-CMakeFiles/ImageProcessorApp.dir/all: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target ImageProcessorApp"
-.PHONY : CMakeFiles/ImageProcessorApp.dir/all
+CMakeFiles/ddimage.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=6,7,8 "Built target ddimage"
+.PHONY : CMakeFiles/ddimage.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ImageProcessorApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp.dir/all
+CMakeFiles/ddimage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ddimage.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
-.PHONY : CMakeFiles/ImageProcessorApp.dir/rule
+.PHONY : CMakeFiles/ddimage.dir/rule
 
 # Convenience name for target.
-ImageProcessorApp: CMakeFiles/ImageProcessorApp.dir/rule
+ddimage: CMakeFiles/ddimage.dir/rule
+.PHONY : ddimage
+
+# codegen rule for target.
+CMakeFiles/ddimage.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=6,7,8 "Finished codegen for target ddimage"
+.PHONY : CMakeFiles/ddimage.dir/codegen
+
+# clean rule for target.
+CMakeFiles/ddimage.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/clean
+.PHONY : CMakeFiles/ddimage.dir/clean
+
+#=============================================================================
+# Target rules for target examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir
+
+# All Build rule for target.
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all: CMakeFiles/ddimage.dir/all
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/depend
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4 "Built target ImageProcessorApp"
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all
+
+# Build rule for subdir invocation for target.
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/rule
+
+# Convenience name for target.
+ImageProcessorApp: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/rule
 .PHONY : ImageProcessorApp
 
 # codegen rule for target.
-CMakeFiles/ImageProcessorApp.dir/codegen: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target ImageProcessorApp"
-.PHONY : CMakeFiles/ImageProcessorApp.dir/codegen
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/codegen: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target ImageProcessorApp"
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/codegen
 
 # clean rule for target.
-CMakeFiles/ImageProcessorApp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/clean
-.PHONY : CMakeFiles/ImageProcessorApp.dir/clean
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/clean
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir
+# Target rules for target examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all: CMakeFiles/ddimage.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num= "Built target ImageProcessorApp_autogen_timestamp_deps"
-.PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
-.PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-ImageProcessorApp_autogen_timestamp_deps: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule
+ImageProcessorApp_autogen_timestamp_deps: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/rule
 .PHONY : ImageProcessorApp_autogen_timestamp_deps
 
 # codegen rule for target.
-CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num= "Finished codegen for target ImageProcessorApp_autogen_timestamp_deps"
-.PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
-CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
-.PHONY : CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ImageProcessorApp_autogen.dir
+# Target rules for target examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir
 
 # All Build rule for target.
-CMakeFiles/ImageProcessorApp_autogen.dir/all: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=7 "Built target ImageProcessorApp_autogen"
-.PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/all
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/all: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=5 "Built target ImageProcessorApp_autogen"
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ImageProcessorApp_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageProcessorApp_autogen.dir/all
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles 0
-.PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/rule
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/rule
 
 # Convenience name for target.
-ImageProcessorApp_autogen: CMakeFiles/ImageProcessorApp_autogen.dir/rule
+ImageProcessorApp_autogen: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/rule
 .PHONY : ImageProcessorApp_autogen
 
 # codegen rule for target.
-CMakeFiles/ImageProcessorApp_autogen.dir/codegen: CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=7 "Finished codegen for target ImageProcessorApp_autogen"
-.PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/codegen
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/codegen: examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles --progress-num=5 "Finished codegen for target ImageProcessorApp_autogen"
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/codegen
 
 # clean rule for target.
-CMakeFiles/ImageProcessorApp_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/clean
-.PHONY : CMakeFiles/ImageProcessorApp_autogen.dir/clean
+examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/clean
+.PHONY : examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

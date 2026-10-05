@@ -1,37 +1,23 @@
 cmake_minimum_required(VERSION 3.16)
-project(ImageProcessorProject)
+project(DDImage VERSION 0.1.0 LANGUAGES CXX)
 
-# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Enable Qt auto-generation tools (required for Qt macros like Q_OBJECT)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
+option(DDIMAGE_BUILD_EXAMPLES "Build example apps" ON)
+option(DDIMAGE_BUILD_TESTS "Build tests" OFF)
 
-# Find the Qt libraries (Multimedia + MultimediaWidgets are needed for the camera)
-find_package(Qt6 COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED)
-
-# Define your source files
-set(SOURCES
-    main.cpp
-    ImageProcessor.cpp
-    matrix.cpp
-)
-
-# Plain executable on every OS (no MACOSX_BUNDLE)
-add_executable(ImageProcessorApp ${SOURCES})
-
-# macOS only: embed Info.plist into the binary so Qt can find the camera
-# usage description. Windows and Linux ignore this block.
-if(APPLE)
-    target_link_options(ImageProcessorApp PRIVATE
-        "LINKER:-sectcreate,__TEXT,__info_plist,${CMAKE_CURRENT_SOURCE_DIR}/Info.plist")
+add_library(ddimage STATIC src/matrix.cpp src/ImageProcessor.cpp)
+target_include_directories(ddimage PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+if(NOT MSVC)
+    target_compile_options(ddimage PRIVATE -Wno-deprecated-declarations)
 endif()
 
-target_link_libraries(ImageProcessorApp PRIVATE
-    Qt6::Widgets
-    Qt6::Multimedia
-    Qt6::MultimediaWidgets
-)
+if(DDIMAGE_BUILD_EXAMPLES)
+    add_subdirectory(examples/Image_processing_in_qt_window)
+endif()
+
+if(DDIMAGE_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()

@@ -1,5 +1,8 @@
-/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ddimage.dir
 /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/edit_cache.dir
 /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/rebuild_cache.dir
-/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir
-/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/ImageProcessorApp_autogen.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/CMakeFiles/edit_cache.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/CMakeFiles/rebuild_cache.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir
+/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir

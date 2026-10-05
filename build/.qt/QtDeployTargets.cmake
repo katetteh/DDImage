@@ -1,2 +1,4 @@
-set(__QT_DEPLOY_TARGET_ImageProcessorApp_FILE /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/ImageProcessorApp)
+set(__QT_DEPLOY_TARGET_ImageProcessorApp_FILE /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/ImageProcessorApp)
 set(__QT_DEPLOY_TARGET_ImageProcessorApp_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_ddimage_FILE /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/libddimage.a)
+set(__QT_DEPLOY_TARGET_ddimage_TYPE STATIC_LIBRARY)

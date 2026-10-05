@@ -5,7 +5,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_UNAME"
     description: "Path to a program."
@@ -62,14 +62,14 @@ events:
     kind: "message-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:218 (message)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Darwin - 25.6.0 - arm64
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Path to a program."
@@ -124,11 +124,11 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_C_COMPILER"
-    description: "C compiler"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
     settings:
       SearchFramework: "FIRST"
       SearchAppBundle: "FIRST"
@@ -138,13 +138,13 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "cc"
-      - "gcc"
+      - "c++"
+      - "g++"
       - "cl"
       - "bcc"
-      - "xlc"
+      - "icpx"
       - "icx"
-      - "clang"
+      - "clang++"
     candidate_directories:
       - "/Users/kelvintettehaddo/Library/Python/3.9/bin/"
       - "/opt/homebrew/bin/"
@@ -160,12 +160,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/pkg/env/global/bin/"
     searched_directories:
-      - "/Users/kelvintettehaddo/Library/Python/3.9/bin/cc"
-      - "/opt/homebrew/bin/cc"
-      - "/opt/homebrew/sbin/cc"
-      - "/usr/local/bin/cc"
-      - "/System/Cryptexes/App/usr/bin/cc"
-    found: "/usr/bin/cc"
+      - "/Users/kelvintettehaddo/Library/Python/3.9/bin/c++"
+      - "/opt/homebrew/bin/c++"
+      - "/opt/homebrew/sbin/c++"
+      - "/usr/local/bin/c++"
+      - "/System/Cryptexes/App/usr/bin/c++"
+    found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
         - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
@@ -191,8 +191,8 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -205,10 +205,10 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "CMakeCCompilerId.c.in"
+      - "CMakeCXXCompilerId.cpp.in"
     candidate_directories:
       - "/opt/homebrew/share/cmake/Modules/"
-    found: "/opt/homebrew/share/cmake/Modules/CMakeCCompilerId.c.in"
+    found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
         - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
@@ -232,11 +232,11 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
     message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
       Build flags: 
       Id flags:  
       
@@ -244,26 +244,26 @@ events:
       0
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
-      The C compiler identification is AppleClang, found in:
-        /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/4.4.2/CompilerIdC/a.out
+      The CXX compiler identification is AppleClang, found in:
+        /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/4.4.2/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:323 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
     message: |
-      Detecting C compiler apple sysroot: "/usr/bin/cc" "-E" "apple-sdk.c"
-        # 1 "apple-sdk.c"
+      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
+        # 1 "apple-sdk.cpp"
         # 1 "<built-in>" 1
         # 1 "<built-in>" 3
-        # 484 "<built-in>" 3
+        # 533 "<built-in>" 3
         # 1 "<command line>" 1
         # 1 "<built-in>" 2
-        # 1 "apple-sdk.c" 2
+        # 1 "apple-sdk.cpp" 2
         # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
         # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
         # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
@@ -286,7 +286,7 @@ events:
         # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
         # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
         # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 2 "apple-sdk.c" 2
+        # 2 "apple-sdk.cpp" 2
         
         
       Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
@@ -294,8 +294,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -346,8 +346,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -398,8 +398,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -450,8 +450,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -502,8 +502,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -554,8 +554,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -606,8 +606,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -672,8 +672,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -738,8 +738,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -804,8 +804,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -870,8 +870,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -935,161 +935,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "c++"
-      - "g++"
-      - "cl"
-      - "bcc"
-      - "icpx"
-      - "icx"
-      - "clang++"
-    candidate_directories:
-      - "/usr/bin/"
-    found: "/usr/bin/c++"
-    search_context:
-      ENV{PATH}:
-        - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/pkg/env/global/bin"
-        - "/opt/homebrew/bin"
-        - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
-        - "/opt/homebrew/sbin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "CMakeCXXCompilerId.cpp.in"
-    candidate_directories:
-      - "/opt/homebrew/share/cmake/Modules/"
-    found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
-    search_context:
-      ENV{PATH}:
-        - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/pkg/env/global/bin"
-        - "/opt/homebrew/bin"
-        - "/Users/kelvintettehaddo/Library/Python/3.9/bin"
-        - "/opt/homebrew/sbin"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    message: |
-      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      0
-      
-      
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
-      
-      The CXX compiler identification is AppleClang, found in:
-        /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/4.4.2/CompilerIdCXX/a.out
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:323 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    message: |
-      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
-        # 1 "apple-sdk.cpp"
-        # 1 "<built-in>" 1
-        # 1 "<built-in>" 3
-        # 533 "<built-in>" 3
-        # 1 "<command line>" 1
-        # 1 "<built-in>" 2
-        # 1 "apple-sdk.cpp" 2
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
-        # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 90 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h" 1 3 4
-        # 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 207 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-        # 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
-        # 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
-        # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 2 "apple-sdk.cpp" 2
-        
-        
-      Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
-  -
-    kind: "find-v1"
-    backtrace:
       - "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake:66 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_INSTALL_NAME_TOOL"
     description: "Path to a program."
@@ -1147,208 +995,16 @@ events:
     kind: "try_compile-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    checks:
-      - "Detecting C compiler ABI info"
-    directories:
-      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo"
-      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo"
-    cmakeVariables:
-      CMAKE_CXX_STDLIB_MODULES_JSON: ""
-      CMAKE_C_FLAGS: ""
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-    buildResult:
-      variable: "CMAKE_C_ABI_COMPILED"
-      cached: false
-      stdout: |
-        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_f8c9d/fast
-        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_f8c9d.dir/build.make CMakeFiles/cmTC_f8c9d.dir/build
-        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo'
-        Building C object CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
-        Apple clang version 21.0.0 (clang-2100.3.34.2)
-        Target: arm64-apple-darwin25.6.0
-        Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 21.0.0 (clang-2100.3.34.2) default target arm64-apple-darwin25.6.0
-        ignoring nonexistent directory "/usr/local/include"
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        #include "..." search starts here:
-        #include <...> search starts here:
-         /Library/Developer/CommandLineTools/usr/lib/clang/21/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
-         /Library/Developer/CommandLineTools/usr/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
-        End of search list.
-        Linking C executable cmTC_f8c9d
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8c9d.dir/link.txt --verbose=1
-        Apple clang version 21.0.0 (clang-2100.3.34.2)
-        Target: arm64-apple-darwin25.6.0
-        Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f8c9d -L/usr/local/lib -v CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-27037.1
-        BUILD 21:17:51 Aug 25 2026
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-        TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
-        Library search paths:
-        	/usr/local/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
-        Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -o cmTC_f8c9d
-        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo'
-        
-      exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:160 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Effective list of requested architectures (possibly empty)  : ""
-      Effective list of architectures found in the ABI info binary: "arm64"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed C implicit include dir info: rv=done
-        found start of include info
-        found start of implicit include info
-          add: [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-          add: [/Library/Developer/CommandLineTools/usr/include]
-        end of search list found
-        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/21/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
-        implicit include dirs: [/Library/Developer/CommandLineTools/usr/lib/clang/21/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo']
-        ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_f8c9d/fast]
-        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_f8c9d.dir/build.make CMakeFiles/cmTC_f8c9d.dir/build]
-        ignore line: [gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo']
-        ignore line: [Building C object CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.34.2)]
-        ignore line: [Target: arm64-apple-darwin25.6.0]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-GV2FIo -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 21.0.0 (clang-2100.3.34.2) default target arm64-apple-darwin25.6.0]
-        ignore line: [ignoring nonexistent directory "/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
-        ignore line: [#include "..." search starts here:]
-        ignore line: [#include <...> search starts here:]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
-        ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_f8c9d]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8c9d.dir/link.txt --verbose=1]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.34.2)]
-        ignore line: [Target: arm64-apple-darwin25.6.0]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f8c9d -L/usr/local/lib -v CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> linker [/Library/Developer/CommandLineTools/usr/bin/ld]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f8c9d -L/usr/local/lib -v CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-lto_library] ==> ignore, skip following value
-          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-platform_version] ==> ignore
-          arg [macos] ==> ignore
-          arg [26.0.0] ==> ignore
-          arg [27.0] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
-          arg [-mllvm] ==> ignore
-          arg [-enable-linkonceodr-outlining] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_f8c9d] ==> ignore
-          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
-          arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_f8c9d.dir/CMakeCCompilerABI.c.o] ==> ignore
-          arg [-lSystem] ==> lib [System]
-          arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld 
-        Library search paths: [;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        remove lib [System]
-        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        implicit libs: []
-        implicit objs: []
-        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Running the C compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-27037.1
-      BUILD 21:17:51 Aug 25 2026
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-      LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-      TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq"
-      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq"
+      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA"
+      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1359,20 +1015,20 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq'
+        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_a298e/fast
-        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_a298e.dir/build.make CMakeFiles/cmTC_a298e.dir/build
-        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq'
-        Building CXX object CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_0342b/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_0342b.dir/build.make CMakeFiles/cmTC_0342b.dir/build
+        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA'
+        Building CXX object CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 21.0.0 (clang-2100.3.34.2)
         Target: arm64-apple-darwin25.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 21.0.0 (clang-2100.3.34.2) default target arm64-apple-darwin25.6.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1386,13 +1042,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_a298e
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a298e.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_0342b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0342b.dir/link.txt --verbose=1
         Apple clang version 21.0.0 (clang-2100.3.34.2)
         Target: arm64-apple-darwin25.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_a298e -L/usr/local/lib -v CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0342b -L/usr/local/lib -v CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-27037.1
         BUILD 21:17:51 Aug 25 2026
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1404,8 +1060,8 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a298e
-        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq'
+        /usr/bin/c++  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0342b
+        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA'
         
       exitCode: 0
   -
@@ -1413,7 +1069,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:160 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Effective list of requested architectures (possibly empty)  : ""
       Effective list of architectures found in the ABI info binary: "arm64"
@@ -1422,7 +1078,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -1444,25 +1100,25 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq']
+        ignore line: [Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_a298e/fast]
-        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_a298e.dir/build.make CMakeFiles/cmTC_a298e.dir/build]
-        ignore line: [gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq']
-        ignore line: [Building CXX object CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_0342b/fast]
+        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_0342b.dir/build.make CMakeFiles/cmTC_0342b.dir/build]
+        ignore line: [gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA']
+        ignore line: [Building CXX object CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 21.0.0 (clang-2100.3.34.2)]
         ignore line: [Target: arm64-apple-darwin25.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-E5B2gq -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-5rQcLA -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 21.0.0 (clang-2100.3.34.2) default target arm64-apple-darwin25.6.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1476,14 +1132,14 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_a298e]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a298e.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_0342b]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0342b.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 21.0.0 (clang-2100.3.34.2)]
         ignore line: [Target: arm64-apple-darwin25.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_a298e -L/usr/local/lib -v CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> linker [/Library/Developer/CommandLineTools/usr/bin/ld]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_a298e -L/usr/local/lib -v CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0342b -L/usr/local/lib -v CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> linker [/Library/Developer/CommandLineTools/usr/bin/ld]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0342b -L/usr/local/lib -v CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1500,10 +1156,10 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_a298e] ==> ignore
+          arg [cmTC_0342b] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_a298e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_0342b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
@@ -1529,7 +1185,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
       @(#)PROGRAM:ld PROJECT:ld-27037.1
@@ -1537,32 +1193,28 @@ events:
       configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
       LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
       TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
-...
-
----
-events:
   -
     kind: "try_compile-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
-      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:162 (check_cxx_source_compiles)"
       - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:226 (_threads_check_libc)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:196 (include)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4"
-      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4"
+      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv"
+      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv"
     cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
-      CMAKE_C_FLAGS: ""
-      CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "/opt/homebrew/lib/cmake/Qt6;/opt/homebrew/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/lib/cmake/Qt6/3rdparty/kwin"
       CMAKE_OSX_ARCHITECTURES: ""
@@ -1572,17 +1224,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4'
+        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_d88fc/fast
-        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_d88fc.dir/build.make CMakeFiles/cmTC_d88fc.dir/build
-        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4'
-        Building C object CMakeFiles/cmTC_d88fc.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_d88fc.dir/src.c.o -MF CMakeFiles/cmTC_d88fc.dir/src.c.o.d -o CMakeFiles/cmTC_d88fc.dir/src.c.o -c /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4/src.c
-        Linking C executable cmTC_d88fc
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d88fc.dir/link.txt --verbose=1
-        /usr/bin/cc  -arch arm64 CMakeFiles/cmTC_d88fc.dir/src.c.o -o cmTC_d88fc
-        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Bw1Ed4'
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_c38ab/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_c38ab.dir/build.make CMakeFiles/cmTC_c38ab.dir/build
+        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv'
+        Building CXX object CMakeFiles/cmTC_c38ab.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_c38ab.dir/src.cxx.o -MF CMakeFiles/cmTC_c38ab.dir/src.cxx.o.d -o CMakeFiles/cmTC_c38ab.dir/src.cxx.o -c /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv/src.cxx
+        Linking CXX executable cmTC_c38ab
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c38ab.dir/link.txt --verbose=1
+        /usr/bin/c++  -arch arm64 CMakeFiles/cmTC_c38ab.dir/src.cxx.o -o cmTC_c38ab
+        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-Y7YrWv'
         
       exitCode: 0
   -
@@ -1595,7 +1247,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -1790,7 +1442,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -1982,7 +1634,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -2184,12 +1836,12 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc"
-      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc"
+      source: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW"
+      binary: "/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2203,17 +1855,17 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc'
+        Change Dir: '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_80881/fast
-        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_80881.dir/build.make CMakeFiles/cmTC_80881.dir/build
-        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc'
-        Building CXX object CMakeFiles/cmTC_80881.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_80881.dir/src.cxx.o -MF CMakeFiles/cmTC_80881.dir/src.cxx.o.d -o CMakeFiles/cmTC_80881.dir/src.cxx.o -c /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc/src.cxx
-        Linking CXX executable cmTC_80881
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80881.dir/link.txt --verbose=1
-        /usr/bin/c++  -arch arm64 CMakeFiles/cmTC_80881.dir/src.cxx.o -o cmTC_80881
-        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-TYb6hc'
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_a2756/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_a2756.dir/build.make CMakeFiles/cmTC_a2756.dir/build
+        gmake[1]: Entering directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW'
+        Building CXX object CMakeFiles/cmTC_a2756.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_a2756.dir/src.cxx.o -MF CMakeFiles/cmTC_a2756.dir/src.cxx.o.d -o CMakeFiles/cmTC_a2756.dir/src.cxx.o -c /Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW/src.cxx
+        Linking CXX executable cmTC_a2756
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2756.dir/link.txt --verbose=1
+        /usr/bin/c++  -arch arm64 CMakeFiles/cmTC_a2756.dir/src.cxx.o -o cmTC_a2756
+        gmake[1]: Leaving directory '/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/CMakeFiles/CMakeScratch/TryCompile-pHagDW'
         
       exitCode: 0
   -
@@ -2228,7 +1880,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "program"
     variable: "MACDEPLOYQT_EXECUTABLE"
     description: "Path to a program."
@@ -2332,7 +1984,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Core"
     configs:
       -
@@ -2509,7 +2161,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "library"
     variable: "OPENGL_gl_LIBRARY"
     description: "OpenGL GL library"
@@ -2608,7 +2260,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "library"
     variable: "OPENGL_glu_LIBRARY"
     description: "OpenGL GLU library"
@@ -2707,7 +2359,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "path"
     variable: "OPENGL_INCLUDE_DIR"
     description: "Include for OpenGL"
@@ -2862,7 +2514,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "path"
     variable: "OPENGL_GLU_INCLUDE_DIR"
     description: "Include for the OpenGL GLU library"
@@ -3015,7 +2667,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "path"
     variable: "Vulkan_INCLUDE_DIR"
     description: "Path to a file."
@@ -3213,7 +2865,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "library"
     variable: "Vulkan_LIBRARY"
     description: "Path to a library."
@@ -3332,7 +2984,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLC_EXECUTABLE"
     description: "Path to a program."
@@ -3486,7 +3138,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
     description: "Path to a program."
@@ -3643,7 +3295,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6DBusTools"
     configs:
       -
@@ -3842,7 +3494,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6DBus"
     configs:
       -
@@ -3996,7 +3648,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -4145,7 +3797,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -4296,7 +3948,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Multimedia/Qt6MultimediaDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Concurrent"
     configs:
       -
@@ -4434,7 +4086,7 @@ events:
       - "/opt/homebrew/lib/cmake/Qt6Multimedia/Qt6MultimediaDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/opt/homebrew/lib/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake:40 (include)"
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Network"
     configs:
       -
@@ -4591,7 +4243,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6Multimedia"
     configs:
       -
@@ -4761,7 +4413,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake:257 (find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6MultimediaWidgets"
     configs:
       -
@@ -4898,7 +4550,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:14 (find_package)"
+      - "examples/Image_processing_in_qt_window/CMakeLists.txt:1 (find_package)"
     name: "Qt6"
     components:
       -

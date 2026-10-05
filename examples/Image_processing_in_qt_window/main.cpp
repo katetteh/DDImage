@@ -37,8 +37,8 @@
 #include <iostream>
 using namespace std;
 
-#include "matrix.h"
-#include "ImageProcessor.h"
+#include <ddimage/matrix.h>
+#include <ddimage/ImageProcessor.h>
 
 // ─── Convert RGBImage → QImage ────────────────────────────────────────────
 QImage rgbImageToQImage(RGBImage& img) {
@@ -123,12 +123,12 @@ std::vector<ViewEntry> buildEntries(const QString& imagePath) {
 
     // ── Resize comparisons — enable Pixel-perfect mode (press P) ──
     entries.push_back(ViewEntry::fromMatrix("Original greyscale",       grey));
-    entries.push_back(ViewEntry::fromMatrix("Nearest ↓ half",           processor.resize(previewGrey, sw, sh, INTER_NEAREST)));
-    entries.push_back(ViewEntry::fromMatrix("Bilinear ↓ half",          processor.resize(previewGrey, sw, sh, INTER_LINEAR)));
-    entries.push_back(ViewEntry::fromMatrix("Bicubic ↓ half",           processor.resize(previewGrey, sw, sh, INTER_CUBIC)));
-    entries.push_back(ViewEntry::fromMatrix("Nearest ↑ double",         processor.resize(previewGrey, lw, lh, INTER_NEAREST)));
-    entries.push_back(ViewEntry::fromMatrix("Bilinear ↑ double",        processor.resize(previewGrey, lw, lh, INTER_LINEAR)));
-    entries.push_back(ViewEntry::fromMatrix("Bicubic ↑ double",         processor.resize(previewGrey, lw, lh, INTER_CUBIC)));
+    entries.push_back(ViewEntry::fromRGB("Nearest ↓ half",           processor.resize(previewRgb, sw, sh, INTER_NEAREST)));
+    entries.push_back(ViewEntry::fromRGB("Bilinear ↓ half",          processor.resize(previewRgb, sw, sh, INTER_LINEAR)));
+    entries.push_back(ViewEntry::fromRGB("Bicubic ↓ half",           processor.resize(previewRgb, sw, sh, INTER_CUBIC)));
+    entries.push_back(ViewEntry::fromRGB("Nearest ↑ double",         processor.resize(previewRgb, lw, lh, INTER_NEAREST)));
+    entries.push_back(ViewEntry::fromRGB("Bilinear ↑ double",        processor.resize(previewRgb, lw, lh, INTER_LINEAR)));
+    entries.push_back(ViewEntry::fromRGB("Bicubic ↑ double",         processor.resize(previewRgb, lw, lh, INTER_CUBIC)));
 
     // ── Filter comparisons (RGB, fit-to-window is fine here) ──
     entries.push_back(ViewEntry::fromRGB("Original RGB",                rgb));
@@ -571,9 +571,9 @@ int main(int argc, char* argv[]) {
 
     QString imagePath;
     const QStringList candidates = {
-        QDir::current().filePath("Image1.jpg"),
-        QDir(QCoreApplication::applicationDirPath()).filePath("Image1.jpg"),
-        QDir(QCoreApplication::applicationDirPath()).filePath("../Image1.jpg")
+        QDir::current().filePath("image1.jpg"),
+        QDir(QStringLiteral(DDIMAGE_DATA_DIR)).filePath("image1.jpg"),
+        QDir(QCoreApplication::applicationDirPath()).filePath("image1.jpg")
     };
 
     for (const QString& candidate : candidates) {

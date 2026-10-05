@@ -1,7 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/cmake_install.cmake"
+		"/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/cmake_install.cmake",
+		"/Users/kelvintettehaddo/Documents/GitHub/DDImage/build/examples/Image_processing_in_qt_window/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

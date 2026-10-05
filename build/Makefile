@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ddimage
+
+# Build rule for target.
+ddimage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ddimage
+.PHONY : ddimage
+
+# fast build rule for target.
+ddimage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/build
+.PHONY : ddimage/fast
+
+#=============================================================================
 # Target rules for targets named ImageProcessorApp
 
 # Build rule for target.
@@ -126,7 +139,7 @@ ImageProcessorApp: cmake_check_build_system
 
 # fast build rule for target.
 ImageProcessorApp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/build
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp.dir/build
 .PHONY : ImageProcessorApp/fast
 
 #=============================================================================
@@ -139,7 +152,7 @@ ImageProcessorApp_autogen_timestamp_deps: cmake_check_build_system
 
 # fast build rule for target.
 ImageProcessorApp_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen_timestamp_deps.dir/build
 .PHONY : ImageProcessorApp_autogen_timestamp_deps/fast
 
 #=============================================================================
@@ -152,104 +165,56 @@ ImageProcessorApp_autogen: cmake_check_build_system
 
 # fast build rule for target.
 ImageProcessorApp_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp_autogen.dir/build.make CMakeFiles/ImageProcessorApp_autogen.dir/build
+	$(MAKE) $(MAKESILENT) -f examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build.make examples/Image_processing_in_qt_window/CMakeFiles/ImageProcessorApp_autogen.dir/build
 .PHONY : ImageProcessorApp_autogen/fast
 
-ImageProcessor.o: ImageProcessor.cpp.o
-.PHONY : ImageProcessor.o
+src/ImageProcessor.o: src/ImageProcessor.cpp.o
+.PHONY : src/ImageProcessor.o
 
 # target to build an object file
-ImageProcessor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.o
-.PHONY : ImageProcessor.cpp.o
+src/ImageProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/ImageProcessor.cpp.o
+.PHONY : src/ImageProcessor.cpp.o
 
-ImageProcessor.i: ImageProcessor.cpp.i
-.PHONY : ImageProcessor.i
+src/ImageProcessor.i: src/ImageProcessor.cpp.i
+.PHONY : src/ImageProcessor.i
 
 # target to preprocess a source file
-ImageProcessor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.i
-.PHONY : ImageProcessor.cpp.i
+src/ImageProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/ImageProcessor.cpp.i
+.PHONY : src/ImageProcessor.cpp.i
 
-ImageProcessor.s: ImageProcessor.cpp.s
-.PHONY : ImageProcessor.s
+src/ImageProcessor.s: src/ImageProcessor.cpp.s
+.PHONY : src/ImageProcessor.s
 
 # target to generate assembly for a file
-ImageProcessor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessor.cpp.s
-.PHONY : ImageProcessor.cpp.s
+src/ImageProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/ImageProcessor.cpp.s
+.PHONY : src/ImageProcessor.cpp.s
 
-ImageProcessorApp_autogen/mocs_compilation.o: ImageProcessorApp_autogen/mocs_compilation.cpp.o
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.o
+src/matrix.o: src/matrix.cpp.o
+.PHONY : src/matrix.o
 
 # target to build an object file
-ImageProcessorApp_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessorApp_autogen/mocs_compilation.cpp.o
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.cpp.o
+src/matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/matrix.cpp.o
+.PHONY : src/matrix.cpp.o
 
-ImageProcessorApp_autogen/mocs_compilation.i: ImageProcessorApp_autogen/mocs_compilation.cpp.i
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-ImageProcessorApp_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessorApp_autogen/mocs_compilation.cpp.i
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.cpp.i
-
-ImageProcessorApp_autogen/mocs_compilation.s: ImageProcessorApp_autogen/mocs_compilation.cpp.s
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-ImageProcessorApp_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/ImageProcessorApp_autogen/mocs_compilation.cpp.s
-.PHONY : ImageProcessorApp_autogen/mocs_compilation.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
+src/matrix.i: src/matrix.cpp.i
+.PHONY : src/matrix.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/matrix.cpp.i
+.PHONY : src/matrix.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-matrix.o: matrix.cpp.o
-.PHONY : matrix.o
-
-# target to build an object file
-matrix.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/matrix.cpp.o
-.PHONY : matrix.cpp.o
-
-matrix.i: matrix.cpp.i
-.PHONY : matrix.i
-
-# target to preprocess a source file
-matrix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/matrix.cpp.i
-.PHONY : matrix.cpp.i
-
-matrix.s: matrix.cpp.s
-.PHONY : matrix.s
+src/matrix.s: src/matrix.cpp.s
+.PHONY : src/matrix.s
 
 # target to generate assembly for a file
-matrix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageProcessorApp.dir/build.make CMakeFiles/ImageProcessorApp.dir/matrix.cpp.s
-.PHONY : matrix.cpp.s
+src/matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ddimage.dir/build.make CMakeFiles/ddimage.dir/src/matrix.cpp.s
+.PHONY : src/matrix.cpp.s
 
 # Help Target
 help:
@@ -262,18 +227,13 @@ help:
 	@echo "... ImageProcessorApp_autogen"
 	@echo "... ImageProcessorApp_autogen_timestamp_deps"
 	@echo "... ImageProcessorApp"
-	@echo "... ImageProcessor.o"
-	@echo "... ImageProcessor.i"
-	@echo "... ImageProcessor.s"
-	@echo "... ImageProcessorApp_autogen/mocs_compilation.o"
-	@echo "... ImageProcessorApp_autogen/mocs_compilation.i"
-	@echo "... ImageProcessorApp_autogen/mocs_compilation.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... matrix.o"
-	@echo "... matrix.i"
-	@echo "... matrix.s"
+	@echo "... ddimage"
+	@echo "... src/ImageProcessor.o"
+	@echo "... src/ImageProcessor.i"
+	@echo "... src/ImageProcessor.s"
+	@echo "... src/matrix.o"
+	@echo "... src/matrix.i"
+	@echo "... src/matrix.s"
 .PHONY : help
 
 

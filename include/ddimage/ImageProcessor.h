@@ -40,6 +40,7 @@ class ImageProcessor{
         RGBImage ROI_circular(RGBImage& img, int cx, int cy, int radius);
         Matrix bilateralFilter(Matrix& img, float sigma_space, float sigma_colour);
         RGBImage bilateralFilter(RGBImage& img, float sigma_space, float sigma_colour);
+        // Resize methods for RGB images, used internally by resize()
         Matrix resize(Matrix& img, int new_width, int new_height, InterpolationMethod method);
         RGBImage resize(RGBImage& img, int new_width, int new_height, InterpolationMethod method);
         Matrix resizeNearest(Matrix& img, int new_width, int new_height);
